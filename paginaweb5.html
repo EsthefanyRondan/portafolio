@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esthefany Rondán | Portafolio Profesional</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-dark: #0A192F;
+            --primary-blue: #1E3A8A;
+            --accent-gold: #D97706;
+            --accent-blue: #2563EB;
+            --bg-light: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 12px 24px -4px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        /* --- HERO HEADER --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 70px 20px 60px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(10, 25, 47, 0.2);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header-info .name-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+
+        .header-info h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            color: #BFDBFE;
+        }
+
+        .header-info .subtitle {
+            font-size: 1.15rem;
+            color: #93C5FD;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #FFFFFF;
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-btn i {
+            font-size: 1.1rem;
+        }
+
+        .header-tags {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tag-hero {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- SECTION TITLES --- */
+        .section-header {
+            margin: 50px 0 30px;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: var(--accent-blue);
+            display: block;
+            margin-top: 6px;
+            border-radius: 2px;
+        }
+
+        /* --- STACK Y HERRAMIENTAS --- */
+        .about-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px 35px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .interests-box h4 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-chip {
+            background-color: #EFF6FF;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid #BFDBFE;
+        }
+
+        /* --- PORTFOLIO GRID --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            background-color: #CBD5E1;
+        }
+
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .card-subtitle {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .card-desc {
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .card-highlights-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: auto;
+        }
+
+        .card-ul li {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .card-ul li::before {
+            content: '▪';
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+
+        /* --- HOBBIES & DATOS CURIOSOS --- */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .hobby-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .hobby-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hobby-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .hobby-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px 10px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .header-info .name-title {
+                font-size: 2.3rem;
+            }
+            .section-title::after {
+                margin: 6px auto 0;
+            }
+            .section-header {
+                text-align: center;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="header-info">
+                <div class="name-title">ESTHEFANY RONDÁN</div>
+                <h1>Portafolio Profesional</h1>
+                <div class="subtitle">Estudiante de Ingeniería Industrial (10.º ciclo - UNI)</div>
+                
+                <!-- REDES SOCIALES / CONTACTO -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/esthefany-rondan-044655250/" target="_blank" class="social-btn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:errojas04@gmail.com" class="social-btn">
+                        <i class="fas fa-envelope"></i> errojas04@gmail.com
+                    </a>
+                </div>
+
+                <div class="header-tags">
+                    <span class="tag-hero">Banca & Finanzas</span>
+                    <span class="tag-hero">Optimización de Procesos</span>
+                    <span class="tag-hero">Gestión de Proyectos</span>
+                    <span class="tag-hero">Liderazgo Ejecutivo</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- STACK Y COMPETENCIAS TÉCNICAS -->
+        <div class="section-header">
+            <h2 class="section-title">Stack & Herramientas Técnicas</h2>
+        </div>
+
+        <div class="about-card">
+            <div class="interests-box">
+                <div class="skills-grid">
+                    <span class="skill-chip">Power Automate</span>
+                    <span class="skill-chip">VBA / Macros</span>
+                    <span class="skill-chip">SQL</span>
+                    <span class="skill-chip">SharePoint</span>
+                    <span class="skill-chip">Diagramas de Gantt</span>
+                    <span class="skill-chip">Mapeo de Procesos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRAYECTORIA Y CASOS DE IMPACTO -->
+        <div class="section-header">
+            <h2 class="section-title">Proyectos & Casos de Impacto</h2>
+        </div>
+        
+        <div class="portfolio-grid">
+
+            <!-- 1. Indicadores de Gestión -->
+            <div class="card">
+                <img src="kpisokr.jpg" alt="Indicadores de Gestión de Proyectos" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Indicadores de Gestión de Proyectos (KPIs & OKRs)</h3>
+                    <div class="card-subtitle">Líder de Organización & Moderadora | Centro Cultural Núcleo</div>
+                    <p class="card-desc">Diseño y gestión integral del webinar especializado para conectar a estudiantes de la FIIS-UNI con la gestión de proyectos corporativos junto al Ing. Erick Guerrero Camacho.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Transferencia de Conocimiento:</strong> Capacitación práctica en diseño e implementación de KPIs y OKRs corporativos.</li>
+                        <li><strong>Desarrollo de Talento:</strong> Entrega de becas de especialización para asistentes destacados.</li>
+                        <li><strong>Gestión de Redes:</strong> Networking estratégico entre alumnos y consultores del sector tecnológico.</li>
+                        <li><strong>Liderazgo:</strong> Coordinación ejecutiva de un equipo organizador para la ejecución exitosa del evento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Visita IBM -->
+            <div class="card">
+                <img src="ibm.jpg" alt="Visita Técnica IBM Perú" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Visita Técnica Tecnológica: IBM Perú</h3>
+                    <div class="card-subtitle">Participante Seleccionada | Centro Cultural Núcleo</div>
+                    <p class="card-desc">Inmersión corporativa en las instalaciones de IBM orientada al análisis de soluciones enterprise, transformación digital y entornos de trabajo de alto rendimiento.</p>
+                    <div class="card-highlights-title">Impacto y Aprendizajes Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Especialización & Roles:</strong> Análisis directo con líderes de industria sobre articulación de perfiles técnicos y de gestión.</li>
+                        <li><strong>Transformación Digital:</strong> Evaluación de líneas de solución para optimizar procesos enterprise.</li>
+                        <li><strong>Visión Estratégica:</strong> Integración de la ingeniería industrial en la industria TI y consultoría.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. CoNET 2023 -->
+            <div class="card">
+                <img src="conet.jpg" alt="CoNET 2023" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">CoNET 2023: Encuentro de Networking</h3>
+                    <div class="card-subtitle">Coorganizadora, Logística & Moderadora | Centro Cultural Núcleo</div>
+                    <p class="card-desc">Planificación y ejecución del evento institucional diseñado para fomentar el networking entre estudiantes de la UNI y profesionales del sector corporativo.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Control de Tiempos:</strong> Aplicación de Diagramas de Gantt para el seguimiento estricto del cronograma.</li>
+                        <li><strong>Logística & Operativa:</strong> Coordinación integral de recursos, espacios y dinámicas interactivas.</li>
+                        <li><strong>Moderación:</strong> Conducción de ponencias y facilitación de relacionamiento de alto valor.</li>
+                        <li><strong>Fortalecimiento Institucional:</strong> Consolidación de un espacio recurrente de vinculación laboral.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. Visita Marsar -->
+            <div class="card">
+                <img src="marsal.jpg" alt="Visita Técnica Fábrica Marsar" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Visita Técnica Organizacional: Fábrica Marsar S.R.L.</h3>
+                    <div class="card-subtitle">Líder Organizadora | Centro Cultural Núcleo</div>
+                    <p class="card-desc">Planificación y dirección logística de la visita a planta orientada a la observación de procesos productivos industriales, automatización y cultura organizacional.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Gestión Integral:</strong> Coordinación de permisos, transporte, agenda y relación directa con gerencia de planta.</li>
+                        <li><strong>Análisis en Planta:</strong> Observación de líneas de producción y puntos de control de calidad operacional.</li>
+                        <li><strong>Gestión del Cambio:</strong> Análisis de prevención de errores (Poka-Yoke conceptual) e incentivos de personal.</li>
+                        <li><strong>Cultura Organizacional:</strong> Estrategias para fomentar la visibilidad de errores como insumo Kaizen.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. CODE Congreso 2023 -->
+            <div class="card">
+                <img src="code.png" alt="Congreso CODE 2023" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Congreso de Desarrollo Emprendedor (CODE 2023)</h3>
+                    <div class="card-subtitle">Coorganizadora, Logística & Moderadora | CCAT - FIIS UNI</div>
+                    <p class="card-desc">Organización integral del congreso institucional de la FIIS UNI que reunió a más de 200 asistentes para promover la innovación y el liderazgo emprendedor.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Moderación Ejecutiva:</strong> Conducción oficial de ponencias y facilitación de diálogo entre ponentes y audiencia.</li>
+                        <li><strong>Coordinación de Ponencias:</strong> Gestión directa con ponentes e invitados de la industria.</li>
+                        <li><strong>Gestión Logística:</strong> Control operativo de distribución de kits y merchandise para +200 asistentes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. Leyton Ingenieros -->
+            <div class="card">
+                <img src="leyton.jpg" alt="Leyton Ingenieros" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Leyton Ingenieros</h3>
+                    <div class="card-subtitle">Consultora Junior | Dic 2024 - Ene 2025</div>
+                    <p class="card-desc">Levantamiento de información en campo y análisis operativo para empresas cliente, evaluando la interacción entre procesos y eficiencia del trabajo.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Diagnóstico en Planta:</strong> Identificación de cuellos de botella mediante visitas técnicas y entrevistas.</li>
+                        <li><strong>Mapeo de Procesos:</strong> Alineación de la capacidad operativa con puestos críticos y talento.</li>
+                        <li><strong>Automatización VBA:</strong> Desarrollo de macro que redujo 2h de trabajo manual por informe en 6 empresas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 7. Planta BASA -->
+            <div class="card">
+                <img src="basa.jpg" alt="Visita Técnica BASA" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Visita Técnica Industrial: Planta BASA</h3>
+                    <div class="card-subtitle">Curso de Logística | FIIS UNI</div>
+                    <p class="card-desc">Análisis operativo en la planta de Plásticos Panamericanos enfocado en evaluación logística, layout y filosofía Lean Manufacturing.</p>
+                    <div class="card-highlights-title">Impacto y Aprendizajes Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Gestión Visual:</strong> Tableros de indicadores en tiempo real ("Fábrica que Habla").</li>
+                        <li><strong>Herramientas Lean:</strong> Análisis práctico de SMED, producción celular y cultura Kaizen.</li>
+                        <li><strong>Automatización:</strong> Evaluación del impacto de cobots en la eficiencia logística.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 8. Academia Samay BCP -->
+            <div class="card">
+                <img src="academia samay 1.jpg" alt="Academia Samay BCP" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Programa de Desarrollo Integral: Academia Samay</h3>
+                    <div class="card-subtitle">Participante | Banco de Crédito del Perú</div>
+                    <p class="card-desc">Programa corporativo de formación para potenciar el alto rendimiento, la gestión estratégica del tiempo y el equilibrio de salud y productividad.</p>
+                    <div class="card-highlights-title">Impacto y Aprendizajes Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Gestión del Tiempo:</strong> Administración estratégica de recursos limitados en entornos de alta demanda.</li>
+                        <li><strong>Resiliencia:</strong> Autorregulación emocional y bienestar para el desempeño sostenible.</li>
+                        <li><strong>Desarrollo Profesional:</strong> Alineación de propósito de carrera y liderazgo personal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 9. Employer Branding BCP -->
+            <div class="card">
+                <img src="academia samay2.jpg" alt="Employer Branding BCP" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Campaña de Employer Branding</h3>
+                    <div class="card-subtitle">Creadora de Contenido & Practicante | Banco de Crédito del Perú</div>
+                    <p class="card-desc">Diseño y creación de contenido digital para difundir la propuesta de valor del empleado (EVP) y programas para talento joven corporativo.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Difusión EVP:</strong> Visibilidad de cultura corporativa y oportunidades de crecimiento.</li>
+                        <li><strong>Posicionamiento:</strong> Comunicación de reconocimientos del ranking BIE 2025 para practicantes.</li>
+                        <li><strong>Trabajo Multidisciplinario:</strong> Colaboración directa con la gestión del talento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 10. Voluntariado Colegio -->
+            <div class="card">
+                <img src="voluntariado colegio.jpg" alt="Voluntariado Chorrillos" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Jornada de Voluntariado: I.E. Los Reyes Católicos</h3>
+                    <div class="card-subtitle">Voluntaria | Banco de Crédito del Perú</div>
+                    <p class="card-desc">Jornada de acondicionamiento de infraestructura escolar en Chorrillos para mejorar los espacios de aprendizaje comunitarios.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Infraestructura Escolar:</strong> Mantenimiento y pintura para optimizar aulas y espacios.</li>
+                        <li><strong>Impacto Social:</strong> Soporte a los objetivos de sostenibilidad institucionales.</li>
+                        <li><strong>Trabajo en Equipo:</strong> Coordinación eficiente con voluntarios de diversas áreas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 11. CONITECOM -->
+            <div class="card">
+                <img src="conitecom.jpg" alt="CONITECOM UNI" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Congreso Nacional CONITECOM</h3>
+                    <div class="card-subtitle">Staff de Marketing & Logística | FIIS - FIT UNI</div>
+                    <p class="card-desc">Difusión y soporte operativo para el Congreso Nacional de Industria Textil, Confección y Moda organizado en la UNI.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Marketing Digital:</strong> Creación de piezas gráficas y reels promocionales de alto alcance.</li>
+                        <li><strong>Soporte Logístico:</strong> Coordinación en día central durante ponencias y pasarela.</li>
+                        <li><strong>Atención a Stakeholders:</strong> Gestión directa de ponentes y expositores del sector.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 12. Voluntariado Casas Valle 2000 -->
+            <div class="card">
+                <img src="voluntariado casas.jpg" alt="Voluntariado Valle 2000" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Voluntariado Corporativo: Valle 2000</h3>
+                    <div class="card-subtitle">Voluntaria Operativa | Banco de Crédito del Perú</div>
+                    <p class="card-desc">Jornada de intervención comunitaria para el desarrollo de infraestructura básica e instalación de techos y estructuras habitacionales.</p>
+                    <div class="card-highlights-title">Impacto y Logros Clave:</div>
+                    <ul class="card-ul">
+                        <li><strong>Ejecución en Campo:</strong> Armado de estructuras, techos y pintura en plazos reducidos.</li>
+                        <li><strong>Mejora Habitacional:</strong> Adecuación de espacios seguros para familias vulnerables.</li>
+                        <li><strong>Enfoque de Propósito:</strong> Alineación con los objetivos de Responsabilidad Social.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN DE HOBBIES Y DATOS CURIOSOS -->
+        <div class="section-header">
+            <h2 class="section-title">Fuera de la Planta & Oficina</h2>
+        </div>
+
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <span class="hobby-icon">📚</span>
+                <div class="hobby-title">Lectura</div>
+                <div class="hobby-desc">Explorando constantemente libros sobre desarrollo personal, negocios e historias inspiradoras.</div>
+            </div>
+            <div class="hobby-card">
+                <span class="hobby-icon">🎬</span>
+                <div class="hobby-title">Cine & Películas</div>
+                <div class="hobby-desc">Amante de una buena trama, el análisis de guiones y disfrutar de maratones de cine.</div>
+            </div>
+            <div class="hobby-card">
+                <span class="hobby-icon">🔐</span>
+                <div class="hobby-title">Escape Rooms</div>
+                <div class="hobby-desc">Poniendo a prueba la resolución de acertijos, lógica rápida y el trabajo bajo presión.</div>
+            </div>
+            <div class="hobby-card">
+                <span class="hobby-icon">🧁</span>
+                <div class="hobby-title">Repostería</div>
+                <div class="hobby-desc">Aplicando precisión, medición exacta y creatividad para preparar los mejores postres.</div>
+            </div>
+            <div class="hobby-card">
+                <span class="hobby-icon">🏀</span>
+                <div class="hobby-title">Básquetbol</div>
+                <div class="hobby-desc">No seré la jugadora estrella, ¡pero me apasiona estar en la cancha y jugar en equipo!</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER LIMPIO Y PROFESIONAL -->
+    <footer>
+        <p>&copy; Portafolio Profesional de Ingeniería Industrial & Gestión Operativa</p>
+    </footer>
+
+</body>
+</html>
